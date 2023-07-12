@@ -36,7 +36,7 @@ function App() {
   
     const data = response.ok ? await response.json() : {}
     
-    const getLocations = data.ubi.map(item => {
+    const newLocations = data.ubi.map(item => {
       const location = item.ubi.split(',')
       
       return {
@@ -49,7 +49,7 @@ function App() {
       }
     })
 
-    setLocations(getLocations)
+    setLocations(newLocations)
   }
 
   return (
@@ -97,7 +97,7 @@ function App() {
       </Stack>
 
       <Stack>
-        <MapsComponemt locations={locations} />
+        <MapsComponemt locationsProps={locations} />
       </Stack>
     </Stack>
   );

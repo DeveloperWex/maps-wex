@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
-import { MarkerF } from '@react-google-maps/api'
-
+import { GoogleMap, useJsApiLoader, MarkerF } from '@react-google-maps/api';
 
 const containerStyle = {
 	width: '100%',
@@ -11,22 +9,24 @@ const containerStyle = {
 function WexMapsComponemt (props) {
   const { locationsProps = [] } = props;
   
-  const [locations, setLocations] = useState([{
-    lat: 19.6509696,
-	  lng: -99.1133696
-  }, {
-    lat: 19.3633418,
-	  lng: -99.2457234
-  }]);
-  const [center, setCenter] = useState(locations[0]);
-  
+  const [locations, setLocations] = useState([]);
+  const [center, setCenter] = useState({
+	lat: 19.32808819140899,
+	lng: -99.18301581777747,
+  });
+  const [map, setMap] = React.useState(null)
+
+  useEffect(() => {
+	if (locationsProps.length > 0) {
+	  setLocations(locationsProps)
+	  setCenter(locationsProps[0].position)
+	}
+  }, [locationsProps])
+
   const { isLoaded } = useJsApiLoader({
 	id: 'google-map-script',
 	googleMapsApiKey: "AIzaSyC8qYrx8MdbSF57t7R7OckkX3rTe-400z8"
   })
-  
-  
-  const [map, setMap] = React.useState(null)
 
   const onLoadMarker = (marker) => {
     console.log("marker: ", marker);
@@ -59,7 +59,12 @@ function WexMapsComponemt (props) {
 	  {
 		locations.map(item => {
 		  return (
-			<MarkerF onLoad={onLoadMarker} position={item} />
+			<MarkerF
+			  key={item.id}
+			  onLoad={onLoadMarker}
+			  position={item.position}
+			  title={`Agente: ${item.title}`}
+			/>
 		  );
 		})
 	  }
