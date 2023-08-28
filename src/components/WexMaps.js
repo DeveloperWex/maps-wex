@@ -25,7 +25,7 @@ function WexMapsComponemt (props) {
 
   const { isLoaded } = useJsApiLoader({
 	id: 'google-map-script',
-	googleMapsApiKey: "AIzaSyC8qYrx8MdbSF57t7R7OckkX3rTe-400z8"
+	googleMapsApiKey: "AIzaSyDAMaN1F_a0yNUXrCdvUUv8Vkuy0_mJkek"
   })
 
   const onLoadMarker = (marker) => {
