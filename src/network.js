@@ -1,4 +1,4 @@
-const url="https://apiwex.ngrok.dev"
+const url="https://socket.wex.services/ubi"
 const myHeaders = new Headers();
 
 myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
