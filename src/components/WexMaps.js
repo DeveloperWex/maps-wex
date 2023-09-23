@@ -18,6 +18,7 @@ function WexMapsComponemt (props) {
 
   useEffect(() => {
 	if (locationsProps.length > 0) {
+	  console.log('locationsProps: ', locationsProps)
 	  setLocations(locationsProps)
 	  setCenter(locationsProps[0].position)
 	}
@@ -57,7 +58,8 @@ function WexMapsComponemt (props) {
 	  { /* Child components, such as markers, info windows, etc. */ }
 	  <></>
 	  {
-		locations.map(item => {
+		locationsProps.map(item => {
+			console.log('item: ', item);
 		  return (
 			<MarkerF
 			  key={item.id}

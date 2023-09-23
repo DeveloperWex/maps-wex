@@ -31,16 +31,17 @@ function App() {
   }
 
   const getLocations = async (body) => {
-    const request = buildRequest('/ubi','POST', body)
+    /*const request = buildRequest('/ubi','POST', body)
     const response = await fetch(request)
   
     const data = response.ok ? await response.json() : {}
-    
-    const newLocations = data.ubi.map(item => {
-      const location = item.ubi.split(',')
+    console.log('data: ', data)
+    const newLocations = data.map((item, index) => {
+      const location = item.ubi.split(',');
+      console.log('location: ', location);
       
       return {
-        id: item._id,
+        id: `${index}`,
         position: {
           lat: Number(location[0]),
           lng: Number(location[1])
@@ -48,8 +49,38 @@ function App() {
         title: `${item.user}`
       }
     })
+    console.log('newLocations: ', newLocations);
+    setLocations(newLocations)*/
 
-    setLocations(newLocations)
+    setLocations([{
+      id: 1,
+      position: {
+        lat: 19.6509696,
+        lng: -99.1133696
+      },
+      title: 'Vladimir'
+    }, {
+      id: 2,
+      position: {
+        lat: 19.3633418,
+        lng: -99.2457234
+      },
+      title: 'Julio'
+    }, {
+      id: 3,
+      position: {
+        lat: 19.3633418,
+        lng: -99.2457234
+      },
+      title: 'Vladimir'
+    }, {
+      id: 4,
+      position: {
+        lat: 19.6509696,
+        lng: -99.1133696
+      },
+      title: 'Julio'
+    }]);
   }
 
   return (
