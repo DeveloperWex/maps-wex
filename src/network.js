@@ -1,4 +1,4 @@
-const url="https://preapi.wex.services"
+const url="https://ginawex.ngrok.dev"
 const myHeaders = new Headers();
 
 myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
