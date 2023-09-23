@@ -1,4 +1,4 @@
-const url="https://socket.wex.services"
+const url="https://preapi.wex.services"
 const myHeaders = new Headers();
 
 myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
