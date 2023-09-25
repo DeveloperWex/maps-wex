@@ -11,8 +11,8 @@ function WexMapsComponemt (props) {
   
   const [locations, setLocations] = useState([]);
   const [center, setCenter] = useState({
-	lat: 19.32808819140899,
-	lng: -99.18301581777747,
+	lat: 19.6509696,
+	lng: -99.1133696
   });
   const [map, setMap] = React.useState(null)
 

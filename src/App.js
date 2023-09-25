@@ -80,6 +80,41 @@ function App() {
         lng: -99.1133696
       },
       title: 'Julio'
+    }, {
+      id: 5,
+      position: {
+        lat: 19.4264798,
+        lng: -99.1607167
+      },
+      title: 'coffeefy Liverpool'
+    }, {
+      id: 6,
+      position: {
+        lat: 19.4362086,
+        lng: -99.1572047
+      },
+      title: 'monumentos a la revolucion'
+    }, {
+      id: 7,
+      position: {
+        lat: 19.423746,
+        lng: -99.165535
+      },
+      title: 'parque mexico'
+    }, {
+      id: 8,
+      position: {
+        lat: 19.4136963,
+        lng: -99.1664513
+      },
+      title: 'hospital 20 de noviembre'
+    }, {
+      id: 9,
+      position: {
+        lat: 19.3756656,
+        lng: -99.1745025
+      },
+      title: 'centro coyoacan'
     }]);
   }
 
