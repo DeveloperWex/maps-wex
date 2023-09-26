@@ -35,8 +35,8 @@ function App() {
     const response = await fetch(request)
   
     const data = response.ok ? await response.json() : {}
-    console.log('data: ', data)
-    const newLocations = data.map((item, index) => {
+    console.log('data: ', data.ubi)
+    const newLocations = data.ubi.map((item, index) => {
       const location = item.ubi.split(',');
       console.log('location: ', location);
       
